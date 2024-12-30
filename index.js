@@ -37,7 +37,7 @@ process.on("uncaughtException", (err) => {
   });
 });
 
-const server = application.listen(process.env.PORT || 8002, () => {
+const server = application.listen(process.env.PORT || 8010, () => {
   console.log("Server is running at port " + server.address().port);
 });
 
@@ -214,15 +214,11 @@ const job = schedule.scheduleJob("0 21 * * *", function () {
   fetchData();
 });
 
-const job2 = schedule.scheduleJob("10 * * * * *", function () {
-  console.log("Job is running at the 10-second mark of every minute");
+const job3 = schedule.scheduleJob("0 35 18 * * *", function () {
+  console.log("Job executed at in indian time");
 });
 
-const job3 = schedule.scheduleJob("0 7 18 * * *", function () {
-  console.log("Job executed at 6:05 PM IST (12:35 PM UTC)");
-});
-
-
+testFunc()
 // storeProject()
 // storeAPI("UKApolloArdexa",APIS)
 
