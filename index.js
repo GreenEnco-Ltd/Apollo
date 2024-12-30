@@ -208,17 +208,17 @@ async function fetchData() {
       }
     }
   }
+
+  console.log("Job finished at ",new Date().toUTCString()," ",new Date().toLocaleString())
+
 }
 
-const job = schedule.scheduleJob("0 21 * * *", function () {
+const job3 = schedule.scheduleJob("0 0 22 * * *", function () {
+  console.log("Job started at ",new Date().toUTCString()," ",new Date().toLocaleString())
   fetchData();
 });
 
-const job3 = schedule.scheduleJob("0 15 13 * * *", function () {
-  console.log("Job executed at in indian time");
-});
-
-testFunc()
+testFunc();
 // storeProject()
 // storeAPI("UKApolloArdexa",APIS)
 
