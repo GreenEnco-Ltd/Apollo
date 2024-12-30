@@ -214,7 +214,7 @@ const job = schedule.scheduleJob("0 21 * * *", function () {
   fetchData();
 });
 
-const job3 = schedule.scheduleJob("0 35 18 * * *", function () {
+const job3 = schedule.scheduleJob("0 10 13 * * *", function () {
   console.log("Job executed at in indian time");
 });
 
