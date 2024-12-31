@@ -60,12 +60,6 @@ async function testFunc() {
   }
 }
 
-(function(){
-  projectsAndAPIS.forEach(e=>{
-    console.log(e.projectDetail.projectID,e.APIS.length)
-  })
-
-})()
 async function storeProjectsAndAPIS() {
   const client = await connectToDatabase();
   const db = client.db("UKApolloArdexa2");
@@ -215,12 +209,21 @@ async function fetchData() {
     }
   }
 
-  console.log("Job finished at ",new Date().toUTCString()," ",new Date().toLocaleString())
-
+  console.log(
+    "Job finished at ",
+    new Date().toUTCString(),
+    " ",
+    new Date().toLocaleString()
+  );
 }
 
 const job3 = schedule.scheduleJob("0 0 22 * * *", function () {
-  console.log("Job started at ",new Date().toUTCString()," ",new Date().toLocaleString())
+  console.log(
+    "Job started at ",
+    new Date().toUTCString(),
+    " ",
+    new Date().toLocaleString()
+  );
   fetchData();
 });
 
