@@ -60,6 +60,7 @@ async function testFunc() {
   }
 }
 
+
 async function storeProjectsAndAPIS() {
   const client = await connectToDatabase();
   const db = client.db("UKApolloArdexa2");
