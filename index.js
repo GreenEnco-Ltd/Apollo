@@ -60,7 +60,12 @@ async function testFunc() {
   }
 }
 
+(function(){
+  projectsAndAPIS.forEach(e=>{
+    console.log(e.projectDetail.projectID,e.APIS.length)
+  })
 
+})()
 async function storeProjectsAndAPIS() {
   const client = await connectToDatabase();
   const db = client.db("UKApolloArdexa2");
@@ -219,7 +224,7 @@ const job3 = schedule.scheduleJob("0 0 22 * * *", function () {
   fetchData();
 });
 
-testFunc();
+// testFunc();
 // storeProject()
 // storeAPI("UKApolloArdexa",APIS)
 
