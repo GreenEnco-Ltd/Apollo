@@ -218,7 +218,8 @@ async function fetchData() {
   );
 }
 
-const job3 = schedule.scheduleJob("0 22 18 * * *", function () {
+// const job3 = schedule.scheduleJob("0 22 18 * * *", function () {
+const job3 = schedule.scheduleJob("0 50 12 * * *", function () {
   console.log(
     "Job started at ",
     new Date().toUTCString(),
