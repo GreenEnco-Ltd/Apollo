@@ -162,7 +162,8 @@ async function fetchData() {
         const { data } = await axiosInstance.request();
 
         const datas = data?.[`${api?.dataKey}`] || [];
-        var final_collection = projectID + "_" + (api?.rawDataCollection || "");
+        var final_collection =
+          projectID?.slice(-5) + "_" + (api?.rawDataCollection || "");
         var logDetail = {
           fetchingData: api?.rawDataCollection?.replace("raw_data_", ""),
           projectID: projectID,
@@ -217,7 +218,7 @@ async function fetchData() {
   );
 }
 
-const job3 = schedule.scheduleJob("0 0 22 * * *", function () {
+const job3 = schedule.scheduleJob("0 22 18 * * *", function () {
   console.log(
     "Job started at ",
     new Date().toUTCString(),
